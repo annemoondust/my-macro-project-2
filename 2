@@ -20,9 +20,11 @@ for il in range(NL):
     for ilp in range(NL):
         mu_l2[ilp] += prob[il, ilp]*mu_l1[il]
 
+# tax revenue
 tax_revenue = np.sum(l*mu_l2)*0.3
-print(tax_revenue) #中年期の政府の総税収
+print(tax_revenue) 
 
+# pension
 pension_fund = tax_revenue*(1+r)
 y = pension_fund/1
-print(y) #年金額
+print(y)

@@ -66,6 +66,7 @@ for il in range(NL):
         aplus[0, ia, il] = a[iaplus[0, ia, il]]
         v[0, ia, il] = reward[iaplus[0, ia, il]]
 
+# figure
 plt.figure()
 plt.plot(a, aplus[0, :, 0], marker='o', label='Low')
 plt.plot(a, aplus[0, :, 1], marker='s', label='Mid')
