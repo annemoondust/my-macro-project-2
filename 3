@@ -21,14 +21,14 @@ prob = np.array([
     [0.1360, 0.7281, 0.1361],
     [0.0021, 0.2528, 0.7451]
 ])
-mu_1 = np.array([1.0/NL, 1.0/NL, 1.0/NL])
-mu_2 = np.zeros(NL)
+mu_l1 = np.array([1.0/NL, 1.0/NL, 1.0/NL])
+mu_l2 = np.zeros(NL)
 for il in range(NL):
     for ilp in range(NL):
-        mu_2[ilp] += prob[il, ilp]*mu_1[il]
+        mu_l2[ilp] += prob[il, ilp]*mu_l1[il]
 
 # pension
-tax_revenue = np.sum(l*mu_2)*0.3
+tax_revenue = np.sum(l*mu_l2)*0.3
 pension_fund = tax_revenue*(1+r)
 y = pension_fund/1
 
