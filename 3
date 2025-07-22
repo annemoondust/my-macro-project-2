@@ -70,12 +70,16 @@ for il in range(NL):
         aplus[0, ia, il] = a[iaplus[0, ia, il]]
         v[0, ia, il] = reward[iaplus[0, ia, il]]
 
+after_l = aplus[0, :, 0]
+after_m = aplus[0, :, 1]
+after_h = aplus[0, :, 2]
+
 # figure
 plt.figure()
-plt.plot(a, aplus[0, :, 0], marker='o', label='Low')
-plt.plot(a, aplus[0, :, 1], marker='s', label='Mid')
-plt.plot(a, aplus[0, :, 2], marker='^', label='High')
-plt.title("policy function")
+plt.plot(a, after_l, marker='.', label='Low', color='hotpink')
+plt.plot(a, after_m, marker='.', label='Mid', color='mediumorchid')
+plt.plot(a, after_h, marker='.', label='High', color='royalblue')
+plt.title("post-pension policy function")
 plt.xlabel("a_1")
 plt.ylabel("a_2")
 plt.ylim(a_l, a_u)
